@@ -42,8 +42,8 @@
                 
                 </ul>
                 <div class="optional-link d-flex align-items-center ms-4 d-none d-xl-block">
-                    <a href="signin.html" class="btn btn-link me-3"><i class="fas fa-circle-user"></i>Login</a>
-                    <a href="#" class="btn btn-info">Create An Account</a>
+                    <a href="https://app.smartconvert.ng/signin" class="btn btn-link me-3"><i class="fas fa-circle-user"></i>Login</a>
+                    <a href="https://app.smartconvert.ng/signup" class="btn btn-info">Create An Account</a>
                 </div>
             </div>
         </div>
@@ -61,8 +61,8 @@
                                     <div class="col-md-8 col-xl-6 order-first">
                                         <h1 class="fw-bold display-5">SWEET RATE, SWIFT PAYMENT</h1>
                                         <p class="lead mt-3 mb-4 d-none d-xl-block">Trade your coin for naira and enjoy sweet rate with swift payment.</p>
-                                        <a href="#" class="btn btn-warning">Start trading<i class="fas fa-bolt ms-1"></i></a>
-                                        <a href="#" class="btn btn-link ms-3 d-none d-xl-inline"><i class="fas fa-arrow-right"></i>Chat With Us</a>
+                                        <a href="https://app.smartconvert.ng/signin" class="btn btn-warning">Start trading<i class="fas fa-bolt ms-1"></i></a>
+                                        <a href="https://api.whatsapp.com/send?phone=23407062946447&amp;text=I%20want%20to%20trade" class="btn btn-link ms-3 d-none d-xl-inline"><i class="fas fa-arrow-right"></i>Chat With Us</a>
                                     </div>
                                     <div class="col-md-4 col-xl-6 order-last">
                                         <div class="in-carousel-image">
@@ -80,8 +80,8 @@
                                     <div class="col-md-8 col-xl-6 order-first">
                                         <h1 class="fw-bold display-5">RELIABLE & SECURE PLATFORM</h1>
                                         <p class="lead mt-3 mb-4 d-none d-xl-block">We've always been here from the beginning and will always be here for your #InstantFunding.</p>
-                                        <a href="#" class="btn btn-warning">Start trading<i class="fas fa-bolt ms-1"></i></a>
-                                        <a href="#" class="btn btn-link ms-3 d-none d-xl-inline"><i class="fas fa-arrow-right"></i>Chat With Us</a>
+                                        <a href="https://app.smartconvert.ng/signin" class="btn btn-warning">Start trading<i class="fas fa-bolt ms-1"></i></a>
+                                        <a href="https://api.whatsapp.com/send?phone=23407062946447&amp;text=I%20want%20to%20trade" class="btn btn-link ms-3 d-none d-xl-inline"><i class="fas fa-arrow-right"></i>Chat With Us</a>
                                     </div>
                                     <div class="col-md-4 col-xl-6 order-last">
                                         <div class="in-carousel-image">
@@ -99,6 +99,13 @@
             </div>
         </section>
         <!-- slideshow content end -->
+        
+        <div style="position: fixed; bottom:10px; left:20px; z-index: 99"> 
+			<a href="tel:2347062946447" class="btn btn-primary" title="Call Us Now" style="height: 50px;">Call Us Now	 <i class="fa fa-phone"></i></a>
+			<a href="https://api.whatsapp.com/send?phone=23407062946447&amp;text=I%20want%20to%20trade" style="height: 50px;" target="_blank" class="btn btn-success" title="Chat Us On WhatsApp">
+			  <marquee behavior="alternate" style="width: 120px" scrollamount="4" onmouseover="this.stop()" onmouseout="this.start()">WhatsApp <i class="fa fa-whatsapp"></i></marquee>
+			</a>
+		</div>
         <!-- section content begin -->
         <section class="py-5 text-white in-cirro-1" style="background-color: #3a3361;">
             <div class="container">
@@ -106,7 +113,7 @@
                 <div class="row gy-2 gy-md-2 gx-lg-3">
                     <div class="col-12">
                         <div class="row">
-                            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-5 gy-2 g-md-2 gx-lg-2">
+                            <div class="row row-cols-2 row-cols-md-2 row-cols-lg-6 gy-2 g-md-2 gx-lg-2" sty>
                                 <div class="col d-flex align-items-stretch">
                                     <div class="card">
                                         <div class="card-body" style="color:#651430; font-weight: 600;">
@@ -148,6 +155,15 @@
                                         <div class="card-body" style="color:#651430; font-weight: 600;">
                                             <img src="img/main/dogecoin-doge-logo.svg" alt="icon" width="46" height="46" />
                                             <span id="doge_price"> </span> <br> Buy: <span id="doge_buy"> </span> <br> Sell: <span id="doge_sell"> </span> </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col d-flex align-items-stretch">
+                                    <div class="card">
+                                        <div class="card-body" style="color:#651430; font-weight: 600;">
+                                            <img src="img/main/litecoin-ltc-logo.svg" alt="icon" width="46" height="46" />
+                                            <span id="ltc_price"> </span> <br> Buy: <span id="litecoin_buy"> </span> <br> Sell: <span id="litecoin_sell"> </span> </span>
                                         </div>
                                     </div>
                                 </div>
@@ -390,11 +406,10 @@
             type: "GET",
             url: "https://min-api.cryptocompare.com/data/pricemulti?fsyms=BTC,DOGE,USDT,TRX,Solana,XRP,ETH,LTC&tsyms=USD&api_key=f72b59432fb04a56c30fee2cc24adfdca9cda19c8a50b49c7bddba4cc0a469b6",
             success: function (result) {
-                console.log(result);
                 document.getElementById("btc_price").innerText = result.BTC.USD 
                 document.getElementById("eth_price").innerText = result.ETH.USD 
                 document.getElementById("doge_price").innerText = result.DOGE.USD
-                // document.getElementById("ltc_price").innerText = result.LTC.USD
+                document.getElementById("ltc_price").innerText = result.LTC.USD
                 document.getElementById("usdt_price").innerText = result.USDT.USD
             },
             });    
@@ -406,9 +421,18 @@
             type: "GET",
             url: "https://api.smartconvert.ng/api/v1/list-coin",
             success: function (result) {
-                console.log(result);
-                console.log("This is working");
-                document.getElementById("btc_price").innerText = result.BTC.USD 
+                document.getElementById("btc_buy").innerText = ' '+ '₦'+result[0].buy_rate; 
+                document.getElementById("btc_sell").innerText = ' '+ '₦'+result[0].sell_rate; 
+                document.getElementById("eth_buy").innerText = ' '+ '₦'+result[1].buy_rate; 
+                 document.getElementById("eth_sell").innerText = ' '+ '₦'+result[1].sell_rate; 
+                 document.getElementById("doge_buy").innerText = ' '+ '₦'+result[2].buy_rate; 
+                 document.getElementById("doge_sell").innerText = ' '+ '₦'+result[2].sell_rate; 
+                 document.getElementById("usdt_buy").innerText = ' '+ '₦'+result[3].buy_rate; 
+                 document.getElementById("usdt_sell").innerText = ' '+ '₦'+result[3].sell_rate; 
+                 document.getElementById("perfectmoney_buy").innerText = ' '+ '₦'+result[8].buy_rate;
+                 document.getElementById("perfectmoney_sell").innerText = ' '+ '₦'+result[8].sell_rate; 
+                 document.getElementById("litecoin_buy").innerText = ' '+ '₦'+result[6].buy_rate;
+                 document.getElementById("litecoin_sell").innerText = ' '+ '₦'+result[6].sell_rate; 
             }
     })
 }
